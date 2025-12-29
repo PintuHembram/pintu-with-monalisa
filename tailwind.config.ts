@@ -83,6 +83,14 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
+        'page-flip-next': {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(-180deg)' },
+        },
+        'page-flip-prev': {
+          '0%': { transform: 'rotateY(0deg)' },
+          '100%': { transform: 'rotateY(180deg)' },
+        },
         "accordion-down": {
           from: { height: "0" },
           to: { height: "var(--radix-accordion-content-height)" },
@@ -125,6 +133,8 @@ export default {
         "float": "float 6s ease-in-out infinite",
         "shimmer": "shimmer 2s linear infinite",
         "glow": "glow 2s ease-in-out infinite",
+        "page-flip-next": "page-flip-next 0.6s ease-in-out forwards",
+        "page-flip-prev": "page-flip-prev 0.6s ease-in-out forwards",
       },
     },
   },
