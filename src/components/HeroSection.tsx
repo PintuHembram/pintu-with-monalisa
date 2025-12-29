@@ -1,4 +1,5 @@
 import { ChevronDown, Heart } from 'lucide-react';
+import heroBackground from '@/assets/hero-background.jpg';
 
 const HeroSection = () => {
   const scrollToGallery = () => {
@@ -6,11 +7,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-hero-gradient overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      
+      {/* Dark overlay for readability */}
+      <div className="absolute inset-0 bg-foreground/60" />
+      
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/10 blur-3xl animate-float" />
-      <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-lavender/20 blur-3xl animate-float-delayed" />
-      <div className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-champagne/20 blur-2xl animate-pulse-soft" />
+      <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary/20 blur-3xl animate-float" />
+      <div className="absolute bottom-20 right-10 w-48 h-48 rounded-full bg-lavender/30 blur-3xl animate-float-delayed" />
+      <div className="absolute top-1/3 right-1/4 w-24 h-24 rounded-full bg-champagne/30 blur-2xl animate-pulse-soft" />
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="space-y-8 animate-fade-in">
@@ -23,13 +33,13 @@ const HeroSection = () => {
           </div>
 
           {/* Title */}
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-foreground leading-tight">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium text-primary-foreground leading-tight drop-shadow-lg">
             Every Picture Tells
             <span className="block text-gradient-gold italic mt-2">Our Story</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="font-body text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body text-xl md:text-2xl lg:text-3xl text-primary-foreground/90 max-w-2xl mx-auto leading-relaxed drop-shadow-md">
             A journey of love, moments, and memories
           </p>
 
@@ -42,7 +52,7 @@ const HeroSection = () => {
 
           {/* Date counter placeholder */}
           <div className="pt-8">
-            <p className="font-body text-lg text-muted-foreground">
+            <p className="font-body text-lg text-primary-foreground/80">
               Together since <span className="text-primary font-medium">365+ days</span>
             </p>
           </div>
@@ -51,7 +61,7 @@ const HeroSection = () => {
         {/* Scroll indicator */}
         <button
           onClick={scrollToGallery}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors cursor-pointer group"
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary-foreground/70 hover:text-primary transition-colors cursor-pointer group"
         >
           <span className="font-body text-sm tracking-wider uppercase">Explore Our Memories</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
