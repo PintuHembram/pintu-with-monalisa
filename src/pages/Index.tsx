@@ -1,13 +1,37 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect } from 'react';
+import FloatingHearts from '@/components/FloatingHearts';
+import HeroSection from '@/components/HeroSection';
+import GallerySection from '@/components/GallerySection';
+import MemoriesSection from '@/components/MemoriesSection';
+import FinaleSection from '@/components/FinaleSection';
+import MusicToggle from '@/components/MusicToggle';
 
 const Index = () => {
+  useEffect(() => {
+    // Update page title
+    document.title = "Our Memories – A Picture Book of Us";
+  }, []);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <main className="relative">
+      {/* Floating hearts background */}
+      <FloatingHearts />
+
+      {/* Music toggle button */}
+      <MusicToggle />
+
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Gallery Section */}
+      <GallerySection />
+
+      {/* Memories Section */}
+      <MemoriesSection />
+
+      {/* Finale Section */}
+      <FinaleSection />
+    </main>
   );
 };
 
