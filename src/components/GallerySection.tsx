@@ -1,5 +1,17 @@
+import { ChevronLeft, ChevronRight, Heart } from 'lucide-react';
 import { useState } from 'react';
-import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import img001 from '../assets/001.jpg';
+import img002 from '../assets/002.jpg';
+import img003 from '../assets/003.jpg';
+import img004 from '../assets/004.jpg';
+import img0003 from '../assets/0003.jpg';
+import img005 from '../assets/005.jpg';
+import img006 from '../assets/006.jpg';
+import img007 from '../assets/007.jpeg';
+import img008 from '../assets/008.jpeg';
+import img009 from '../assets/009.jpeg';
+import img010 from '../assets/010.jpeg';
+
 
 interface GalleryImage {
   id: number;
@@ -11,49 +23,67 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   {
     id: 1,
-    src: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=400&fit=crop",
+    src: img001,
     caption: "The moment our eyes first met, and everything changed forever",
     date: "Our Beginning"
   },
   {
     id: 2,
-    src: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?w=600&h=400&fit=crop",
+    src: img002,
     caption: "This moment still makes my heart smile every time I remember",
     date: "First Date"
   },
   {
     id: 3,
-    src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=600&h=400&fit=crop",
+    src: img003,
     caption: "Dancing in the rain, not caring about the world around us",
     date: "Rainy Day"
   },
   {
     id: 4,
-    src: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=600&h=400&fit=crop",
+    src: img0003,
     caption: "Your laughter is my favorite sound in the entire universe",
     date: "Summer Days"
   },
   {
     id: 5,
-    src: "https://images.unsplash.com/photo-1474552226712-ac0f0961a954?w=600&h=400&fit=crop",
+    src: img004,
     caption: "Adventures are better when shared with your best friend",
     date: "Our Adventure"
   },
   {
     id: 6,
-    src: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?w=600&h=400&fit=crop",
+    src: img005,
     caption: "In your arms, I found my forever home and endless peace",
     date: "Cozy Moments"
   },
   {
     id: 7,
-    src: "https://images.unsplash.com/photo-1522163723043-478ef79a5bb4?w=600&h=400&fit=crop",
+    src: img006,
     caption: "Every sunset reminds me that beautiful things end beautifully",
     date: "Golden Hour"
   },
   {
     id: 8,
-    src: "https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?w=600&h=400&fit=crop",
+    src: img007,
+    caption: "Building dreams together, one moment at a time",
+    date: "Our Future"
+  },
+    {
+    id: 9,
+    src: img008,
+    caption: "Building dreams together, one moment at a time",
+    date: "Our Future"
+  },
+    {
+    id: 10,
+    src: img009,
+    caption: "Building dreams together, one moment at a time",
+    date: "Our Future"
+  },
+      {
+    id: 11,
+    src: img010,
     caption: "Building dreams together, one moment at a time",
     date: "Our Future"
   },
