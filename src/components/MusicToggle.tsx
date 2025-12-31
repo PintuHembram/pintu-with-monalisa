@@ -14,7 +14,17 @@ const MusicToggle = () => {
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
 
-    const onCanPlay = () => setIsLoaded(true);
+    const onCanPlay = () => {
+      setIsLoaded(true);
+      // Auto-play when loaded
+      if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(() => {
+            // Autoplay blocked by browser - will need user interaction
+          });
+      }
+    };
     audioRef.current.addEventListener('canplaythrough', onCanPlay);
 
     return () => {
