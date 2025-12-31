@@ -66,7 +66,7 @@ const FinaleSection = () => {
           {/* Footer signature */}
           <div className="pt-16">
             <p className="font-body text-sm text-primary-foreground/50">
-              Made with ❤️ for the love of my life
+              Pintu ❤️ Monalisa
             </p>
           </div>
         </div>
