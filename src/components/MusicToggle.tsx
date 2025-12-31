@@ -1,5 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
 import { Volume2, VolumeX } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import song from '../assets/song.mp3';
 
 const MusicToggle = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -7,20 +8,19 @@ const MusicToggle = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    // Create audio element with a romantic instrumental track
-    audioRef.current = new Audio(
-      'https://cdn.pixabay.com/audio/2024/02/07/audio_7b1930dbe8.mp3'
-    );
+    // Create audio element using the local `song.mp3`
+    audioRef.current = new Audio(song);
+    if (!audioRef.current) return;
     audioRef.current.loop = true;
     audioRef.current.volume = 0.3;
-    
-    audioRef.current.addEventListener('canplaythrough', () => {
-      setIsLoaded(true);
-    });
+
+    const onCanPlay = () => setIsLoaded(true);
+    audioRef.current.addEventListener('canplaythrough', onCanPlay);
 
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
+        audioRef.current.removeEventListener('canplaythrough', onCanPlay);
         audioRef.current = null;
       }
     };
